@@ -21,3 +21,20 @@ def character_counter(filepath):
         else:
             letter_count_dict[letter] += 1
     return letter_count_dict
+
+
+#def sort_on(items):
+#    return items["num"]
+
+def character_sorted_list(filepath):
+    content_list = character_counter(filepath)
+    sorted_list = sorted(
+        content_list.items(),
+        key=lambda item: item[1],
+        reverse=True
+    )
+    for entry, value in sorted_list:
+        if entry.isalpha():
+            print(f"{entry}: {value}")
+        else:
+            pass
